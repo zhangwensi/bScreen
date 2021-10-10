@@ -10,13 +10,27 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg:'这是组件A中的信息'
+      msg:'这是组件A中的信息',
+      timer:null // 定时器
     }
+  },
+  mounted(){
+    // this.refresh()
+  },
+  destroyed() {
+    clearInterval(this.timer)
   },
   methods: {
     busFn() {
       console.log('aaa')
       bus.$emit('test',this.msg)
+    },
+    // 定时刷新页面
+    refresh() {
+      this.timer = setInterval(()=>{
+        window.location.reload()
+
+      },5000)
     }
   }
 }
