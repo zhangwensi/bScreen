@@ -6,15 +6,17 @@
       <!-- <iframe frameborder="0" width="80%" height="50%" src="http://139.196.178.250:8082/"></iframe> -->
     </div>
     <C @click.stop.native="outClick"/>
+    <ob />
   </div>
 </template>
 
 <script>
 import bus from '../utils/bus'
 import C from './C.vue'
+import ob from './observel.vue'
 export default {
   name: 'B',
-  components: {C},
+  components: {C,ob},
   data() {
     return {
       message:'这是组件B',
